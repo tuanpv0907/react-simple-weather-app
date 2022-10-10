@@ -19,7 +19,7 @@
 
 .overlay {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: var(--background-overlay);
 }
 
@@ -52,6 +52,10 @@
   background-color: var(--section-overlay);
 }
 
+.section__inputs {
+  margin-bottom: 40px;
+}
+
 .section__inputs > input {
   border: 0.8px solid white;
   border-radius: 0.4rem;
@@ -60,6 +64,7 @@
   padding: 0.5rem;
   font-size: 20px;
   font-weight: 200;
+  flex: 1;
 }
 
 .section__inputs > input:focus {
@@ -73,6 +78,7 @@
   font-size: 20px;
   font-weight: 500;
   background: #fff;
+  margin-left: 20px;
 }
 
 .section__inputs > button:hover {
@@ -95,4 +101,37 @@
 
 .temp > h1 {
   font-size: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .app {
+    width: 100vw;
+    max-height: 100vh;
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+  }
+
+  .app::-webkit-scrollbar {
+    display: none;
+  }
+  .section__inputs {
+    margin-bottom: 40px;
+  }
+
+  .section__inputs > input {
+    flex: 1;
+    width: 90%;
+  }
+
+  .section__inputs > button {
+    margin-left: 10px;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .section__inputs > button {
+    padding: 10px;
+  }
 }
